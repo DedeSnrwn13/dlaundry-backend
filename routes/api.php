@@ -27,6 +27,9 @@ Route::post('/register', [UserController::class, 'register']);
 Route::post('/login', [UserController::class, 'login']);
 
 Route::middleware('auth:sanctum')->group(function () {
+    // Laundry
+    Route::get('/laundry/user/{id}', [LaundryController::class, 'whereUserId']);
+
     // Promo
     Route::get('/promo/limit', [PromoController::class, 'readLimit']);
 
